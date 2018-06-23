@@ -16,7 +16,7 @@ The scaling is done by: \
 ![equation](http://latex.codecogs.com/gif.latex?%5Cforall%20i%20%5C%3A%5C%3A%20Hubs%28i%29%20%3D%20%5Cfrac%7BHubs%28i%29%7D%7B%5Csqrt%7B%5Csum_%7Bi%7D%5Cleft%20%5C%7C%20Hubs%28i%29%20%5Cright%20%5C%7C%5E2%7D%7D) \
 ![equation](http://latex.codecogs.com/gif.latex?%5Cforall%20i%20%5C%3A%5C%3A%20Auth%28i%29%20%3D%20%5Cfrac%7BAuth%28i%29%7D%7B%5Csqrt%7B%5Csum_%7Bi%7D%5Cleft%20%5C%7C%20Auth%28i%29%20%5Cright%20%5C%7C%5E2%7D%7D)
 
-The PageRank Score of any node in iteration is given by: \
+The PageRank Score of any node in an iteration is given by: \
 ![equation](https://latex.codecogs.com/gif.latex?%5Cforall%20i%2C%20%5C%3A%20%5C%3A%20PageRank%28i%29%20%3D%20%5Csum_%7Bp%20%5Cin%20Neighbors%28i%29%7D%20%5Cfrac%7BPageRank%28p%29%7D%7BL%28p%29%7D) \
 where ![equation](https://latex.codecogs.com/gif.latex?L%28p%29) is the number of outbound links (in this case, just the number of links since graph is undirected) of node ![equation](https://latex.codecogs.com/gif.latex?p) and ![equation](https://latex.codecogs.com/gif.latex?PageRank%28p%29) is the PageRank of nodes in the previous iteration.
 
