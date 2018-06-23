@@ -11,7 +11,7 @@ class PageRank():
     @param alpha: Damping Factor/Parameter for PageRank (0.85 by default)
     @param max_iter: Maximum number of iterations the algorithm performs, if the algorithm has not converged earlier.
     @param tol: The error difference (tolerance) between two iterations for which
-    the algorithm is declared converged and terminates (0.000001 by default)
+    the algorithm is declared converged and terminates (0.001 by default)
     @return pagerank
     The Array of PageRank scores for each node respectively.
     Other Keyword Arguments are simply discarded.
