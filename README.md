@@ -14,4 +14,9 @@ And the algorithm is run for a certain number of iterations until it converges b
 
 The scaling is done by: \
 ![equation](http://latex.codecogs.com/gif.latex?%5Cforall%20i%20%5C%3A%5C%3A%20Hubs%28i%29%20%3D%20%5Cfrac%7BHubs%28i%29%7D%7B%5Csqrt%7B%5Csum_%7Bi%7D%5Cleft%20%5C%7C%20Hubs%28i%29%20%5Cright%20%5C%7C%5E2%7D%7D) \
-![equation](http://latex.codecogs.com/gif.latex?%5Cforall%20i%20%5C%3A%5C%3A%20Auth%28i%29%20%3D%20%5Cfrac%7BAuth%28i%29%7D%7B%5Csqrt%7B%5Csum_%7Bi%7D%5Cleft%20%5C%7C%20Auth%28i%29%20%5Cright%20%5C%7C%5E2%7D%7D)
+![equation](http://latex.codecogs.com/gif.latex?%5Cforall%20i%20%5C%3A%5C%3A%20Auth%28i%29%20%3D%20%5Cfrac%7BAuth%28i%29%7D%7B%5Csqrt%7B%5Csum_%7Bi%7D%5Cleft%20%5C%7C%20Auth%28i%29%20%5Cright%20%5C%7C%5E2%7D%7D) \
+To use this implementation, please clone this repository first and use the `hits.py` file: \
+`git clone https://github.com/Bharat123rox/HITS-Algorithm.git` \
+To use the Algo: \
+```c = HITS() ``` \
+```hubs, authorities = c.compute_hits() ```
