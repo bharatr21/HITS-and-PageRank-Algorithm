@@ -16,10 +16,10 @@ class HITS():
     The Array of Hubbiness scores for each node and the Array of Authority scores for each node respectively.
     Other Keyword Arguments are simply discarded.
     '''
-    def __init__(self, G=None, files=None, initial=1, max_iter=100000, tol=1e-6, **kwargs):
+    def __init__(self, G=None, file=None, initial=1, max_iter=100000, tol=1e-6, **kwargs):
         if not G and not files:
             sys.exit('Exited the program because no graph was provided.')
-        self.G = G if G else read_from_file(files)
+        self.G = G if G else read_from_file(file)
         self.max_iter = max_iter
         self.tol = tol
         self.n = len(self.G)
@@ -77,12 +77,16 @@ def read_from_file(files):
     #Convert to 0-1 adjacency matrix (binarization, here edge weights are discarded and only presence is considered)
     G = [[1 if i else 0 for i in group] for group in G] 
     return G
+def check_square_matrix(matrix):
+    return all(len(row) == len(matrix) for row in matrix)
 def sanity_check(G):
     #Basic check for a 0-1 Adjacency Matrix
     n = len(G)
     for i in range(n):
         for j in range(n):
             try:
+            	if not check_square_matrix(G):
+                    raise ValueError('Only a square matrix processed for HITS Algorithm to be properly defined.')
                 if G[i][j] == 0 or G[i][j] == 1:
                     pass
                 else:
