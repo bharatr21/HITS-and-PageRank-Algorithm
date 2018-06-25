@@ -41,7 +41,7 @@ class PageRank():
                 self.pagerank[i] = 0
                 for j in range(self.n):
                     if self.G[i][j] == 1:
-                        self.pagerank[i] += 1.0 * self.pagerank[j] / self.L[j] if self.L[j] else 0
+                        self.pagerank[i] = self.pagerank[i] + 1.0 * self.pagerank[j] / self.L[j] if self.L[j] else 1.0/self.n
             #Incorporate damping factor alpha
             self.pagerank[i] = ((1 - self.alpha) * 1.0)/self.n + self.alpha * (self.pagerank[i])
             #Condition for convergence of PageRank
@@ -78,6 +78,3 @@ def sanity_check(G):
                     raise ValueError('Only a 0-1 Adjacency Matrix shall be processed')
             except IndexError:
                 raise ValueError('Not a valid Adjacency Matrix')
-c = PageRank(file='test.txt')
-pr = c.compute_pagerank()
-print(pr)
